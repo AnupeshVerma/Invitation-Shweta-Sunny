@@ -1,17 +1,14 @@
-(function ($) {
-    "use strict";
-      $('.sakura-falling').sakura();
-})(jQuery);
-
-
 function playAudio() {
     document.getElementById("my_audio").play();
     console.log('Shaadi me zaroor aana');
 }
 
-document.addEventListener('click', playAudio);
-document.addEventListener('keydown', playAudio);
-document.addEventListener('scroll', playAudio);
+document.getElementById('play-button').addEventListener('click', function () {
+    document.getElementById("my_audio").play();
+    $('.sakura-falling').sakura();
+    document.getElementById('overlay').style.display = 'none';
+    // document.body.classList.remove('blur');
+});
 
 
 // Set the date we're counting down to
