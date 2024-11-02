@@ -1,14 +1,9 @@
-function playAudio() {
-    document.getElementById("my_audio").play();
-    console.log('Shaadi me zaroor aana');
-}
-
-document.getElementById('play-button').addEventListener('click', function () {
-    document.getElementById("my_audio").play();
-    $('.sakura-falling').sakura();
-    document.getElementById('overlay').style.display = 'none';
-    // document.body.classList.remove('blur');
-});
+// document.getElementById('play-button').addEventListener('click', function () {
+//     document.getElementById("my_audio").play();
+//     $('.sakura-falling').sakura();
+//     document.getElementById('overlay').style.display = 'none';
+//     // document.body.classList.remove('blur');
+// });
 
 
 // Set the date we're counting down to
@@ -79,3 +74,24 @@ console.log(
     `%cShaadi me zaroor aana!\n\n`,
     'color: yellow; background:tomato; font-size: 24pt; font-weight: bold',
 )
+
+
+// Add a blur effect initially
+document.body.classList.add('blur');
+
+// Unwrap effect: Slide curtains away when the seal is clicked, start audio and sakura animation
+document.getElementById('seal').addEventListener('click', startReveal);
+
+function startReveal() {
+    // Slide curtains to the sides
+    document.getElementById('left-curtain').style.transform = 'translateX(-100%)';
+    document.getElementById('right-curtain').style.transform = 'translateX(100%)';
+
+    // Hide the seal after clicking
+    document.getElementById('seal').style.display = 'none';
+
+    // Remove blur effect and start sakura falling effect and audio
+    document.body.classList.remove('blur');
+    $('.sakura-falling').sakura();
+    document.getElementById("my_audio").play();
+}

@@ -399,6 +399,11 @@
 body {
 	font-family: Arial, Helvetica, Sans-serif;
 	overflow-x: hidden;
+	background-image: url('../assets/img/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
 }
 
 img {
@@ -407,7 +412,7 @@ img {
 }
 
 @media (max-width:900px) {
-	img {
+	#top_left_flowers, #top_right_flowers {
 		max-width: 30%;
 	}
 }
@@ -627,27 +632,80 @@ a {
 
 
 /* CSS for the play button */
-#overlay {
+/* Curtains */
+#left-curtain, #right-curtain {
     position: fixed;
     top: 0;
+    height: 100vh; /* Full height of the viewport */
+    width: 50vw; /* Half of the viewport width */
+    z-index: 9999;
+    transition: transform 1s ease-in-out;
+    overflow: hidden;
+}
+
+#left-curtain {
     left: 0;
-    width: 100%;
+    transform: translateX(0);
+}
+
+#right-curtain {
+    right: 0;
+    transform: translateX(0);
+}
+
+#left-curtain img, #right-curtain img {
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* Seal styling */
+#seal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #181616; /* Red seal color */
+    color: rgb(254, 220, 92);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999;
-    backdrop-filter: blur(10px);
-}
-
-#play-button {
-    padding: 15px 30px;
-    font-size: 24px;
-    color: white;
-    background: #f06292;
-    border: none;
-    border-radius: 5px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    z-index: 10000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
+/* Hover effect on the seal */
+#seal:hover {
+    transform: translate(-50%, -50%) scale(1.1); /* Scale on hover */
+    box-shadow: 0 0 25px rgba(231, 76, 60, 0.6);
+}
+
+/* Initial body blur effect */
+
+
+/* Bounce animation for the seal */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    40% {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+    60% {
+        transform: translate(-50%, -50%) translateY(-5px);
+    }
+}
+
+.bounce {
+    animation: bounce 1.5s infinite;
+}
