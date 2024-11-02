@@ -10,13 +10,13 @@ function playAudio() {
 }
 
 // Add event listener for click event
-$(document).on('click', function(){
+$(document).on('DOMContentLoaded', function(){
     playAudio();
 });
 
 
 // Set the date we're counting down to
-var countDownDate = new Date("Apr 24, 2024 00:00:00").getTime();
+var countDownDate = new Date("Nov 17, 2024 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -39,7 +39,7 @@ var x = setInterval(function() {
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("time").innerHTML = "Bless the engaged couple for happy life!";
+        document.getElementById("time").innerHTML = "Bless the newly wedded couple for happy life!";
     }
 }, 1000);
 
@@ -75,7 +75,7 @@ var styles2 = [
     , 'font-size: 32px'
 ].join(';');
 
-console.log('\n\n%c SAVE THE DATE: 24th Apr, 2024!', styles);
+console.log('\n\n%c SAVE THE DATE: 17th Nov, 2024!', styles);
 
 console.log('%cYour presence is requested!%c\n\nRegards: Anupesh Verma', styles1, styles2);
 
