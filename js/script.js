@@ -9,10 +9,9 @@ function playAudio() {
     console.log('Shaadi me zaroor aana');
 }
 
-// Add event listener for click event
-$(document).on('DOMContentLoaded', function(){
-    playAudio();
-});
+document.addEventListener('click', playAudio);
+document.addEventListener('keydown', playAudio);
+document.addEventListener('scroll', playAudio);
 
 
 // Set the date we're counting down to
