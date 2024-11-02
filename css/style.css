@@ -518,7 +518,7 @@ body {
 	width: auto;
 	height: auto;
 	padding: 20px;
-	background-color: #eee;
+	background-color: rgb(34, 36, 38);
 	border-radius: 20px;
 	font-size: 16px;
 }
@@ -557,11 +557,11 @@ body {
 }
 
 .days {
-	background: linear-gradient(90deg, #b33a46, #9b313c);
+	background-color:#b33a46
 }
 
 .hours {
-	background: linear-gradient(90deg, #a7c3cd, #90a9b2);
+	background-color : rgb(70, 124, 142);
 }
 
 .minutes {
@@ -682,12 +682,13 @@ a {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.2s ease;
+	box-shadow: 0 0 25px rgba(231, 76, 60, 0.4);
 }
 
 /* Hover effect on the seal */
 #seal:hover {
-    transform: translate(-50%, -50%) scale(1.1); /* Scale on hover */
-    box-shadow: 0 0 25px rgba(231, 76, 60, 0.6);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 25px rgba(231, 76, 60, 0.8);
 }
 
 /* Initial body blur effect */
